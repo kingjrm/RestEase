@@ -1,95 +1,198 @@
 /* About Hero Section */
 .about-hero {
-    background-color: #caf0f8;
-    color: black;
-    padding: 60px 20px;
-    text-align: center;
-    min-height: 535px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+    padding: 120px 20px 100px;
+    position: relative;
+    overflow: hidden;
 }
 
-.about-hero .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 40px;
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(36, 123, 160, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite;
+}
+
+.about-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(10, 36, 99, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, 30px) scale(1.1); }
+}
+
+.about-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #247ba0, #0a2463);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(36, 123, 160, 0.3);
 }
 
 .about-hero h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #0a2463;
+    line-height: 1.2;
+}
+
+.highlight-text {
+    background: linear-gradient(135deg, #247ba0 0%, #0a2463 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .about-hero p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 35px;
 }
 
-/* Team Photos Grid */
-.team-photos {
-    margin-top: -100px;
-    padding: 0 20px 60px;
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: left;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #247ba0 0%, #0a2463 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.hero-image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
+    max-width: 420px;
+    margin-left: auto;
 }
 
-.team-photo {
-    background-color: #D9D9D9;
-    height: 200px;
+.grid-item {
     border-radius: 10px;
-    width: 100%;
-    transition: transform 0.3s ease;
     overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
     position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 180px;
 }
 
-.team-photo img {
+.grid-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(36, 123, 160, 0.8) 0%, rgba(10, 36, 99, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.grid-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    transition: transform 0.4s ease;
 }
 
-.team-photo:hover {
-    transform: scale(1.02);
+.grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* Section Titles and Content */
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #D9D9D9;
-    margin-bottom: 20px;
+.grid-item:hover::before {
+    opacity: 0.5;
 }
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+.grid-item.item-1 {
+    animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.grid-item.item-2 {
+    animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.grid-item.item-3 {
+    animation: fadeInUp 0.6s ease 0.6s both;
+}
+
+.grid-item.item-4 {
+    animation: fadeInUp 0.6s ease 0.8s both;
+}
+
+/* Team Photos Section - REMOVED (now integrated into hero) */
 
 /* Who We Are Section */
 .who-we-are-section {
-    padding: 40px 20px;
+    padding: 80px 20px;
+    background: white;
 }
 
 .who-we-are-section h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 30px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #0a2463;
+    text-align: center;
 }
 
 .who-we-are-section h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
+    color: #247ba0;
 }
 
 .main-description {
-    margin-bottom: 40px;
-    color: #333;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    margin-bottom: 60px;
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.15rem;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Mission and Vision */
@@ -97,48 +200,99 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin-bottom: 0px;
+    margin-bottom: 40px;
+}
+
+.our-mission,
+.our-vision {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(36, 123, 160, 0.1);
+}
+
+.our-mission:hover,
+.our-vision:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 .mission-vision h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #D9D9D9;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #247ba0;
+    margin-bottom: 25px;
+    color: #0a2463;
+}
+
+.mission-vision p {
+    line-height: 1.8;
+    color: #555;
+    font-size: 1rem;
 }
 
 /* What We Do Section */
 .what-we-do-section {
-    padding: 40px 0;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .what-we-do-section h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #0a2463;
 }
 
 .divider {
-    height: 1px;
-    background-color: #D9D9D9;
-    margin-bottom: 20px;
-    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #247ba0 0%, transparent 100%);
+    margin-bottom: 40px;
+    width: 100px;
 }
 
 .content-section {
-    margin-bottom: 30px;
-}
-
-.content-section h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 
 .content-section p {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.content-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-section ul li {
+    padding: 15px 0 15px 40px;
+    position: relative;
+    color: #555;
+    font-size: 1.05rem;
     line-height: 1.6;
+}
+
+.content-section ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #247ba0, #0a2463);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .image-text-layout {
@@ -219,30 +373,51 @@
 .fade-in-up.delay-3 { animation-delay: 0.9s; }
 
 /* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-image-grid {
+        margin-top: 40px;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .about-hero {
-        min-height: 300px;
-        padding: 80px 20px 100px;
+        padding: 100px 20px 60px;
     }
 
     .about-hero h1 {
-        font-size: 2rem;
-        margin-bottom: 15px;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
     }
 
     .about-hero p {
-        font-size: 1rem;
-        padding: 0 15px;
+        font-size: 1.05rem;
+        padding: 0;
     }
 
-    .team-photos {
-        margin-top: -50px;
-        padding: 0 15px 40px;
+    .hero-stats {
+        gap: 25px;
+        flex-wrap: wrap;
     }
 
-    .team-photo {
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .hero-image-grid {
+        margin-top: 30px;
+        gap: 15px;
+    }
+
+    .grid-item {
         height: 180px;
-        margin-bottom: 15px;
     }
 
     .mission-vision {
@@ -251,23 +426,30 @@
     }
 
     .who-we-are-section {
-        padding: 30px 20px;
+        padding: 60px 20px;
     }
 
     .who-we-are-section h2 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
 
     .main-description {
-        font-size: 1rem;
-        margin-bottom: 30px;
+        font-size: 1.05rem;
+        margin-bottom: 40px;
+    }
+
+    .what-we-do-section {
+        padding: 60px 20px;
+    }
+
+    .what-we-do-section h3 {
+        font-size: 1.8rem;
     }
 }
 
 @media (max-width: 480px) {
     .about-hero {
-        min-height: 250px;
-        padding: 60px 15px 80px;
+        padding: 80px 15px 50px;
     }
 
     .about-hero h1 {
@@ -275,37 +457,78 @@
     }
 
     .about-hero p {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
 
-    .team-photos {
-        margin-top: -30px;
-        padding: 0 10px 30px;
-    }
-
-    .team-photo {
-        height: 150px;
+    .about-badge {
+        padding: 8px 20px;
+        font-size: 0.85rem;
         margin-bottom: 20px;
     }
 
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .hero-image-grid {
+        gap: 12px;
+    }
+
+    .grid-item {
+        height: 150px;
+    }
+
     .who-we-are-section {
-        padding: 20px 15px;
+        padding: 40px 15px;
     }
 
     .who-we-are-section h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .who-we-are-section h3 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .main-description {
-        font-size: 0.95rem;
-        margin-bottom: 25px;
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
 
     .mission-vision {
         gap: 25px;
     }
+
+    .our-mission,
+    .our-vision {
+        padding: 30px 25px;
+    }
+
+    .what-we-do-section {
+        padding: 40px 15px;
+    }
+
+    .what-we-do-section h3 {
+        font-size: 1.6rem;
+    }
+
+    .content-section ul li {
+        font-size: 1rem;
+        padding: 12px 0 12px 35px;
+    }
+}
+
+/* Section Divider */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(36, 123, 160, 0.3) 50%, transparent 100%);
+    margin: 0;
 }

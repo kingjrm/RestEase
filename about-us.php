@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./assets/re logo blue.png">
+    <link rel="icon" type="image/png" href="./assets/restease-logo.png">
     <title>About Us - RestEase</title>
     <!-- Add Google Fonts for Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,21 +14,20 @@
     <link rel="stylesheet" href="css/about-us.css">
 </head>
 <body>
-    <!-- Navbar (same as index.html) -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
             <a class="navbar-brand" href="index.php">
-                    <img src="assets/RE Logo New.png" alt="Logo">
-                </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <img src="assets/RE Logo New.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about-us.php">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
-                    <li class="nav-item"><a class="btn" href="login.php">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about-us.php">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-signin" href="login.php">Sign In</a></li>
                 </ul>
             </div>
         </div>
@@ -37,33 +36,40 @@
     <!-- About Us Hero Section -->
     <section class="about-hero">
         <div class="container">
-            <h1 class="fade-in-up delay-1">About Us</h1>
-            <p class="fade-in-up delay-2">RestEase is a digital cemetery management system that helps Padre Garcia keep records organized, certificates updated, and families informed with secure and efficient services.</p>
-        </div>
-    </section>
-
-    <!-- Team Photos Section -->
-    <section class="team-photos">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-3 col-sm-6">
-                    <div class="team-photo fade-in-up delay-1">
-                        <img src="assets/abt1.webp" alt="Team Member 1">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="about-badge fade-in-up delay-1">About RestEase</span>
+                    <h1 class="fade-in-up delay-2">Transforming Cemetery Management with <span class="highlight-text">Digital Innovation</span></h1>
+                    <p class="fade-in-up delay-3">RestEase is a cutting-edge digital cemetery management system designed to help Padre Garcia keep records organized, certificates updated, and families informed with secure and efficient services. We bring peace of mind through technology.</p>
+                    <div class="hero-stats fade-in-up delay-4">
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Records Managed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Families Served</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Digital</div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="team-photo fade-in-up delay-2">
-                        <img src="assets/abt2.webp" alt="Team Member 2">
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="team-photo fade-in-up delay-3">
-                        <img src="assets/abt3.webp" alt="Team Member 3">
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="team-photo fade-in-up delay-2">
-                        <img src="assets/abt4.webp" alt="Team Member 4">
+                <div class="col-lg-6">
+                    <div class="hero-image-grid fade-in-up delay-2">
+                        <div class="grid-item item-1">
+                            <img src="assets/abt1.webp" alt="Team Member 1">
+                        </div>
+                        <div class="grid-item item-2">
+                            <img src="assets/abt2.webp" alt="Team Member 2">
+                        </div>
+                        <div class="grid-item item-3">
+                            <img src="assets/abt3.webp" alt="Team Member 3">
+                        </div>
+                        <div class="grid-item item-4">
+                            <img src="assets/abt4.webp" alt="Team Member 4">
+                        </div>
                     </div>
                 </div>
             </div>
