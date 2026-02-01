@@ -1,0 +1,657 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* prevent horizontal scrollbar caused by 100vw backgrounds */
+    overflow-x: hidden;
+}
+.hero {
+    background: url('../assets/cemetery_bg.webp') center/cover no-repeat;
+    position: relative;
+    height: 100vh;
+    width: 100%; /* use 100% to avoid including scrollbar width (prevents right gap) */
+    max-width: 100%;
+    top: 0; /* Start at top */
+    margin-top: 0 !important; /* Remove any margin that could cause gap */
+    overflow: hidden; /* Prevent gap from padding/margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center;
+    color: black;
+    padding: 20px;
+    padding-top: 80px; /* Add padding to prevent overlap with the navbar */
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
+}
+.navbar {
+    background: rgba(255, 255, 255, 0.2); /* Glass effect */
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 1240px;
+    height: 57px; /* Keep the height consistent */
+    padding: 0 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    height: 30px;
+    margin-right: 10px;
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 15px;
+    color: black;
+    transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    color: #506C84;
+}
+.navbar-nav .btn {
+    background-color: #0077b6;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 0.9rem;
+    border: none;
+    margin: 0; /* Removes extra margin */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds box-shadow for consistency */
+    align-self: center; /* Centers the button vertically */
+}
+.navbar-nav .btn:hover {
+    background-color: #005f8e;
+}
+.navbar-toggler {
+    border: none; /* Removes the default border */
+    background-color: transparent; /* Makes the button background transparent */
+    position: absolute; /* Ensures the button stays outside the navbar */
+    right: 20px; /* Adjusts the position to the right */
+    top: 15px; /* Adjusts the position vertically */
+    z-index: 1050; /* Ensures the button is above other elements */
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    width: 25px; /* Adjusts the size of the icon */
+    height: 25px;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1108px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 45px;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+.btn-container {
+    display: flex;
+    gap: 20px; /* Adds spacing between buttons */
+}
+.btn-custom {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 150px;
+}
+.btn-primary {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #005f8e;
+}
+.btn-dark {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+}
+.btn-dark:hover {
+    background-color: #005f8e;
+}
+.associated-by {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.footer-icons img {
+    width: 60px;
+}
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .btn-container {
+        flex-direction: column; /* Stacks buttons vertically on smaller screens */
+        gap: 10px;
+    }
+    .btn-custom {
+        width: 100%;
+        max-width: 200px;
+    }
+    .footer-icons {
+        justify-content: center;
+    }
+    .navbar {
+        padding: 10px 20px; /* Adjusts padding for smaller screens */
+        height: 57px; /* Maintain the same height in mobile view */
+    }
+    .navbar-collapse {
+        background-color: #D9D9D9; /* Adds a background color to the collapsed menu */
+        border-radius: 10px; /* Adds rounded corners */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        position: absolute; /* Ensures the menu stays outside the navbar */
+        top: 60px; /* Adjusts the position below the navbar */
+        right: 20px; /* Aligns the menu to the right */
+        width: calc(100% - 40px); /* Ensures the menu fits within the screen */
+        z-index: 1040; /* Ensures the menu is above other elements */
+        padding-bottom: 13px;
+    }
+    .navbar-collapse.show {
+        display: block; /* Ensures the menu is visible when expanded */
+    }
+    .associated-by {
+        position: relative;
+        margin-top: 20px;
+        bottom: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+.who-we-are {
+    padding: 60px 20px; /* Adds spacing around the section */
+    background-color: #f8f9fa; /* Light background color */
+}
+
+.section-title {
+    font-size: 2.5rem; /* Larger font size for the title */
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-description {
+    font-size: 1.1rem; /* Slightly larger font size for the description */
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.btn-read-more {
+    background-color: #0077b6;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #005f8e;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Adds rounded corners to the image */
+}
+
+@media (max-width: 768px) {
+    .who-we-are {
+        text-align: center; /* Center-align text for smaller screens */
+    }
+
+    .btn-read-more {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .img-fluid {
+        margin-top: 20px;
+    }
+}
+
+.our-services {
+    padding: 80px 20px; /* Adds spacing around the section */
+    background-color: #ffffff; /* White background for the section */
+}
+
+.service-card {
+    background-color: #caf0f8; /* Updated color for Our Services card */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced evenly */
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.service-card .d-flex {
+    margin-bottom: 15px; /* Adds spacing between the header and description */
+}
+
+.service-card .icon {
+    margin-left: 10px; /* Adds spacing between the title and the icon */
+}
+
+.service-card .icon img {
+    width: 50px; /* Icon size */
+    height: 50px;
+}
+
+.service-title {
+    font-size: 1.5rem; /* Title font size */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0; /* Removes extra margin below the title */
+}
+
+.service-description {
+    font-size: 1rem; /* Description font size */
+    line-height: 1.6;
+    color: #555;
+    margin-top: 10px; /* Adds spacing between the description and the header */
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        margin-bottom: 20px; /* Adds spacing between cards on smaller screens */
+    }
+
+    .service-card .icon img {
+        width: 40px; /* Slightly smaller icons for smaller screens */
+        height: 40px;
+    }
+}
+
+.mt-10 {
+    margin-top: 10rem; /* Adjust as needed */
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    background-color: #506C84;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-hero .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contact-hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Contact Form Section */
+.contact-section {
+    padding: 60px 20px;
+    margin-bottom: 10px;
+}
+
+.contact-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+textarea.form-control {
+    resize: none;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+}
+
+.submit-btn:hover {
+    background-color: #005f8e;
+}
+
+/* Contact Info Box */
+.contact-info {
+    background-color: #0077b6;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.contact-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-info h3:first-child {
+    margin-top: 0;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Map Section */
+.map-section {
+    padding: 0 20px 60px;
+}
+
+.map-section iframe {
+    border-radius: 10px;
+    width: 100%;
+    height: 450px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-hero {
+        min-height: auto;
+        padding: 40px 20px;
+    }
+
+    .contact-hero h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-hero p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-info {
+        margin-top: 30px;
+    }
+}
+
+/* Fade-in-up animation for hero content */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+.fade-in-up.delay-1 { animation-delay: 0.3s; }
+.fade-in-up.delay-2 { animation-delay: 0.6s; }
+.fade-in-up.delay-3 { animation-delay: 0.9s; }
+/* These styles are already in your index.css, just make sure about-us.html is linking to index.css */
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .container {
+    width: 90%;
+    max-width: 1240px;
+    padding: 0 20px;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 0;
+}
+
+.footer hr {
+    margin: 20px 0;
+}
+
+.footer .nav-link {
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        height: auto !important;
+        padding: 30px 0;
+    }
+    
+    .footer .container {
+        padding: 0 15px;
+    }
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(.77,0,.175,1), transform 0.8s cubic-bezier(.77,0,.175,1);
+    will-change: opacity, transform;
+}
+.scroll-animate.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Multi-effect scroll animation classes */
+.scroll-animate {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(.77,0,.175,1), transform 0.8s cubic-bezier(.77,0,.175,1);
+    will-change: opacity, transform;
+}
+.scroll-animate.visible {
+    opacity: 1;
+    transform: none;
+}
+.scroll-animate.fade-up {
+    transform: translateY(40px);
+}
+.scroll-animate.fade-down {
+    transform: translateY(-40px);
+}
+.scroll-animate.scale-in {
+    transform: scale(0.95);
+}
+.scroll-animate.visible.fade-up,
+.scroll-animate.visible.fade-down,
+.scroll-animate.visible.scale-in {
+    transform: none;
+}
+
+/* Optional: stagger effect for child elements */
+.scroll-animate-stagger > * {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(.77,0,.175,1), transform 0.8s cubic-bezier(.77,0,.175,1);
+}
+.scroll-animate-stagger.visible > * {
+    opacity: 1;
+    transform: none;
+}
+.scroll-animate-stagger.visible > *:nth-child(1) { transition-delay: 0.1s; }
+.scroll-animate-stagger.visible > *:nth-child(2) { transition-delay: 0.2s; }
+.scroll-animate-stagger.visible > *:nth-child(3) { transition-delay: 0.3s; }
+.scroll-animate-stagger.visible > *:nth-child(4) { transition-delay: 0.4s; }
+
+/* Random background object styles for sections */
+.section-bg-objects {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.section-bg-object {
+    position: absolute;
+    opacity: 0.13;
+    filter: blur(2px);
+    transition: transform 0.4s cubic-bezier(.77,0,.175,1);
+    will-change: transform;
+}
+.section-bg-object.circle {
+    border-radius: 50%;
+    background: #b3e0ff; /* light blue */
+}
+.section-bg-object.square {
+    border-radius: 8px;
+    background: #90caf9; /* light blue */
+}
+.section-bg-object.triangle {
+    width: 0; height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 52px solid #b3e0ff; /* light blue */
+    background: none;
+    border-radius: 0;
+    opacity: 0.09;
+    filter: blur(0.5px);
+}
+
+/* Automatic random movement animation - multiple variants */
+@keyframes autoMoveBgObj1 {
+    0%   { transform: translate(0px, 0px) rotate(0deg);}
+    20%  { transform: translate(30px, -10px) rotate(45deg);}
+    40%  { transform: translate(-20px, 25px) rotate(90deg);}
+    60%  { transform: translate(25px, 30px) rotate(135deg);}
+    80%  { transform: translate(-30px, -20px) rotate(180deg);}
+    100% { transform: translate(0px, 0px) rotate(360deg);}
+}
+@keyframes autoMoveBgObj2 {
+    0%   { transform: translate(0px, 0px) rotate(0deg);}
+    20%  { transform: translate(-25px, 20px) rotate(-45deg);}
+    40%  { transform: translate(20px, -30px) rotate(-90deg);}
+    60%  { transform: translate(-30px, 10px) rotate(-135deg);}
+    80%  { transform: translate(30px, 30px) rotate(-180deg);}
+    100% { transform: translate(0px, 0px) rotate(-360deg);}
+}
+@keyframes autoMoveBgObj3 {
+    0%   { transform: translate(0px, 0px) rotate(0deg);}
+    20%  { transform: translate(15px, 30px) rotate(30deg);}
+    40%  { transform: translate(-30px, -10px) rotate(60deg);}
+    60%  { transform: translate(20px, -25px) rotate(120deg);}
+    80%  { transform: translate(-20px, 20px) rotate(180deg);}
+    100% { transform: translate(0px, 0px) rotate(360deg);}
+}
+.section-bg-object.automove1 { animation: autoMoveBgObj1 8s linear infinite; }
+.section-bg-object.automove2 { animation: autoMoveBgObj2 7s linear infinite; }
+.section-bg-object.automove3 { animation: autoMoveBgObj3 9s linear infinite; }
+
+/* Make sure section containers are position:relative for absolute objects */
+.hero,
+.who-we-are,
+.explore-restease-section,
+.contact-section,
+.testimony {
+    position: relative;
+    overflow: hidden;
+}

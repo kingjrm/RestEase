@@ -1,0 +1,284 @@
+body {
+            font-family: 'Poppins', sans-serif;
+            background: #f6f8fa;
+        }
+       
+        /* Header section */
+        /* Animated gradient hero background */
+.main-bg-bar {
+    background: linear-gradient(270deg, #caf0f8, #90e0ef, #ade8f4, #48cae4);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    padding: 100px 0 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-bg-bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: floatPattern 40s linear infinite;
+    z-index: 0;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatPattern {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
+
+        .dashboard-header {
+            background: #fff;
+            border-radius: 16px;
+            padding: 80px 48px 72px 48px;
+            margin: -100px auto 0 auto; /* Push up by 48px */
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            max-width: 100%;
+            min-height: 400px;
+        }
+        .dashboard-header h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #000000;
+        }
+        .dashboard-header p {
+            color: #52575e;
+            font-size: 0.97rem;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        /* Hero content fade/slide animation */
+.dashboard-header h2, 
+.dashboard-header p, 
+.dashboard-header img {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Stagger the animation for natural flow */
+.dashboard-header h2 { animation-delay: 0.3s; }
+.dashboard-header p { animation-delay: 0.6s; }
+.dashboard-header img { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-header {
+    position: relative;
+    z-index: 1;
+}
+
+        /* Portal section */
+        .portal-section {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        .portal-title {
+            font-weight: 500;
+            font-size: 1.13rem;
+            margin-bottom: 0;
+        }
+        .portal-desc {
+            color: #6c757d;
+            font-size: 0.97rem;
+            margin-bottom: 18px;
+        }
+        .profile-card {
+            border-radius: 14px;
+            background: #fff;
+            padding: 28px 24px 22px 24px;
+            border: 1.5px solid #dbe3ea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .profile-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e3ecf5;
+        }
+        .profile-details {
+            font-size: 0.97rem;
+            margin-top: 8px;
+        }
+        .profile-details strong {
+            font-weight: 600;
+        }
+        .btn-view-profile {
+            margin-top: 10px;
+            font-size: 0.97rem;
+            border-radius: 8px;
+            padding: 6px 18px;
+            border: 1px solid #b0b8c1;
+            background: #fff;
+            color: #222;
+        }
+        .btn-view-profile:hover {
+            background: #f2f6fa;
+        }
+        .request-card {
+            border-radius: 14px;
+            background: #b7cbe7;
+            color: #222;
+            padding: 28px 24px 22px 24px;
+            border: 1.5px solid #dbe3ea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .request-card h5 {
+            font-weight: 500;
+            font-size: 1.13rem;
+            margin-bottom: 10px;
+        }
+        .request-card p {
+            font-size: 0.97rem;
+            color: #3a3a3a;
+            margin-bottom: 0;
+        }
+        .btn-request {
+            background: #4d8fd3;
+            color: #fff;
+            font-weight: 500;
+            border-radius: 8px;
+            margin-top: 16px;
+            padding: 8px 22px;
+            font-size: 0.97rem;
+            border: none;
+            float: right;
+        }
+        .btn-request:hover {
+            background: #357ab8;
+            color: #fff;
+        }
+        /* Map section */
+        .map-section {
+            margin-top: 18px;
+            margin-bottom: 32px;
+        }
+        .map-container {
+            background: #e3ecf5;
+            border-radius: 18px;
+            padding: 18px 18px 0 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        .map-iframe {
+            width: 100%;
+            height: 320px;
+            border: 0;
+            border-radius: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+        @media (max-width: 991px) {
+            .dashboard-header, .portal-section, .map-container {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .dashboard-header {
+                padding: 32px 12px 24px 12px;
+            }
+            .profile-card, .request-card {
+                padding: 18px 10px 14px 10px;
+            }
+            .map-container {
+                padding: 10px 4px 0 4px;
+            }
+        }
+        @media (max-width: 767px) {
+            .dashboard-header, .portal-section, .map-container {
+                max-width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .map-iframe {
+                height: 180px;
+            }
+        }
+        /* Button hover effect for portal and map buttons */
+.btn-primary,
+.view-btn {
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover,
+.view-btn:hover {
+    background: #0096c7 !important;
+    color: #fff !important;
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Themed button for View Cemetery Maps */
+.btn-map-themed {
+    font-family: 'Poppins', sans-serif;
+    background: #0077b6 !important;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(77,143,211,0.12);
+    transition: all 0.25s ease;
+    margin: 32px auto 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+.btn-map-themed:hover, .btn-map-themed:focus {
+    background: #0096c7 !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transform: translateY(-6px) scale(1.03);
+    color: #fff;
+}
+
+.dashboard-header img {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.hero-container {
+background: rgba(255, 255, 255, 0.44);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.5px);
+-webkit-backdrop-filter: blur(10.5px);
+border: 1px solid rgba(255, 255, 255, 1);
+}
+
