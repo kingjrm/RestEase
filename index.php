@@ -115,7 +115,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="assets/RE Logo New.png" alt="Logo">
-                <span class="brand-name">RestEase</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -236,169 +235,198 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
     <!-- Our Services Section -->
-    <section class="our-services py-5 bg-white">
+    <section class="services-section py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-description">
-                    RestEase offers a modern, efficient, and transparent approach to cemetery management through digital innovation.
-                </p>
+            <div class="services-header text-center mb-5">
+                <span class="services-badge">Our Services</span>
+                <h2 class="services-title">Everything You Need for <span class="highlight">Efficient Cemetery Management</span></h2>
+                <p class="services-subtitle">RestEase offers a comprehensive platform with modern tools designed to simplify and streamline cemetery operations.</p>
             </div>
-            <div class="row mt-4 d-flex align-items-stretch scroll-animate-stagger scale-in">
-                <!-- Card 1 -->
-                <div class="col-md-4 d-flex">
-                    <div class="service-card flex-grow-1 text-center">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <h3 class="service-title flex-grow-1">Record Keeping</h3>
-                            <div class="icon">
-                                <img src="assets/recordsicon.png" alt="Record Keeping" class="img-fluid">
-                            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-database"></i>
                         </div>
-                        <p class="service-description" style="text-align: center;">
-                            We provide a secure and organized digital database that allows administrators to easily store, access, and manage burial and certificate records, ensuring data accuracy and long-term preservation.
-                        </p>
+                        <h3 class="service-card-title">Record Keeping</h3>
+                        <p class="service-card-desc">Secure and organized digital database for storing, accessing, and managing burial and certificate records with complete accuracy.</p>
+                        <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="col-md-4 d-flex">
-                    <div class="service-card flex-grow-1 text-center">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <h3 class="service-title flex-grow-1">Cemetery Mapping</h3>
-                            <div class="icon">
-                                <img src="assets/mappicon.png" alt="Cemetery Mapping" class="img-fluid">
-                            </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-map-marked-alt"></i>
                         </div>
-                        <p class="service-description" style="text-align: center;">
-                            Using GIS technology, we offer an interactive digital map that helps users and administrators locate niches, track availability, and visualize the layout of the cemetery in real time.
-                        </p>
+                        <h3 class="service-card-title">Cemetery Mapping</h3>
+                        <p class="service-card-desc">Interactive digital maps powered by GIS technology to locate niches, track availability, and visualize cemetery layout in real time.</p>
+                        <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <!-- Card 3 -->
-                <div class="col-md-4 d-flex">
-                    <div class="service-card flex-grow-1 text-center">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <h3 class="service-title flex-grow-1">Notifications and Reminders</h3>
-                            <div class="icon">
-                                <img src="assets/notificon.png" alt="Notifications and Reminders" class="img-fluid">
-                            </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card-modern">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-bell"></i>
                         </div>
-                        <p class="service-description" style="text-align: center;">
-                            Our notification system keeps families informed by sending timely alerts for certificate renewals, updates, and important announcements—ensuring no deadlines are missed.
-                        </p>
+                        <h3 class="service-card-title">Smart Notifications</h3>
+                        <p class="service-card-desc">Timely alerts and reminders for certificate renewals, updates, and important announcements to keep families informed.</p>
+                        <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Explore RestEase Section (NEW) -->
-    <section id="explore-restease" class="explore-restease-section py-5 scroll-animate fade-up" style="min-height: 70vh; display: flex; align-items: center;">
-        <div class="section-bg-objects">
-            <div class="section-bg-object circle automove3" style="width:90px;height:90px;top:15%;left:75%;"></div>
-            <div class="section-bg-object square automove1" style="width:65px;height:65px;top:80%;left:25%;"></div>
-            <div class="section-bg-object triangle automove2" style="top:60%;left:50%;width:0;height:0;"></div>
-        </div>
+    <!-- Explore RestEase Section -->
+    <section class="explore-section py-5" id="explore-restease">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Text Content -->
-                <div class="col-lg-7 col-md-12 mb-4 mb-lg-0 d-flex flex-column justify-content-center" style="height:100%;">
-                    <h2 class="fw-bold mb-3">Explore RestEase</h2>
-                    <!-- Carousel Start -->
-                    <div id="exploreCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <p class="explore-carousel-text" style="text-align: justify; cursor: pointer;">
-                                   RestEase is more than just a record management system, it’s a modern digital solution built to simplify and improve cemetery operations in Padre Garcia. Through its web-based platform, users can easily access burial records, request certificates, and track renewal schedules without the hassle of paperwork.
-
-The system provides a secure and transparent way to manage cemetery information, ensuring that data remains accurate and protected. Families can locate niches, receive renewal notifications, and access important updates online, while administrators benefit from organized records and faster processing. </p>
-                            </div>
-                        </div>
+                <!-- Image Column -->
+                <div class="col-lg-5 col-md-12 mb-5 mb-lg-0">
+                    <div class="explore-image-container">
+                        <img src="assets/explore.png" alt="Explore RestEase" class="explore-main-image">
                     </div>
                 </div>
-                <!-- Image Content -->
-                <div class="col-lg-5 col-md-12 text-center d-flex justify-content-center align-items-center" style="height:100%;">
-                    <img src="assets/explore.png" alt="Explore RestEase" class="img-fluid rounded" style="max-width: 350px;">
+                
+                <!-- Content Column -->
+                <div class="col-lg-7 col-md-12">
+                    <div class="explore-content">
+                        <span class="explore-badge">DISCOVER</span>
+                        <h2 class="explore-title">Explore <span class="highlight">RestEase</span></h2>
+                        <p class="explore-description">RestEase is more than just a record management system—it's a modern digital solution built to simplify and improve cemetery operations in Padre Garcia.</p>
+                        
+                        <ul class="explore-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Easy Access to Burial Records</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-certificate"></i>
+                                <span>Request Certificates Online</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-bell"></i>
+                                <span>Renewal Notifications & Alerts</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-lock"></i>
+                                <span>Secure & Protected Data</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Web-Based Platform Access</span>
+                            </li>
+                        </ul>
+                        
+                        <p class="explore-description-secondary">
+                            Families can locate niches, receive renewal notifications, and access important updates online, while administrators benefit from organized records and faster processing.
+                        </p>
+                        
+                        <a href="#contact-section" class="btn-primary-hero">Get Started</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Form Section -->
-    <section class="contact-section scroll-animate fade-down">
-        <div class="section-bg-objects">
-            <div class="section-bg-object circle automove1" style="width:120px;height:120px;top:30%;left:10%;"></div>
-            <div class="section-bg-object square automove2" style="width:85px;height:85px;top:75%;left:80%;"></div>
-            <div class="section-bg-object triangle automove3" style="top:65%;left:40%;width:0;height:0;"></div>
+                        <ul class="explore-features">
+                        <div class="carousel-inner">
+                            
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <h2>Contact Us</h2>
-                    <p class="mb-4">Connect with us for more information or assistance. Whether you have concerns, suggestions, or need help, we're just a message away!</p>
-                    
-                    <?php if ($successMsg): ?>
-                        <div class="alert alert-success"><?php echo $successMsg; ?></div>
-                    <?php elseif ($errorMsg): ?>
-                        <div class="alert alert-danger"><?php echo $errorMsg; ?></div>
-                    <?php endif; ?>
+    </section>
 
-                    <form method="POST" id="contactForm" novalidate>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" placeholder="Name" required>
+    <!-- Contact Section -->
+    <section class="contact-section py-5" id="contact-section">
+        <div class="container">
+            <div class="contact-header text-center mb-5">
+                <span class="contact-badge">Get In Touch</span>
+                <h2 class="contact-title">We're Here to <span class="highlight">Help You</span></h2>
+                <p class="contact-subtitle">Have questions or need assistance? Connect with us for more information. Whether you have concerns, suggestions, or need help, we're just a message away!</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-form-wrapper">
+                        <?php if ($successMsg): ?>
+                            <div class="alert alert-success"><?php echo $successMsg; ?></div>
+                        <?php elseif ($errorMsg): ?>
+                            <div class="alert alert-danger"><?php echo $errorMsg; ?></div>
+                        <?php endif; ?>
+
+                        <form method="POST" id="contactForm" novalidate>
+                            <div class="form-group mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required>
                                 <div class="invalid-feedback">Name is required.</div>
                             </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="contact" placeholder="Contact" required>
+                            <div class="form-group mb-3">
+                                <label for="contact" class="form-label">Contact Number</label>
+                                <input type="text" class="form-control" id="contact" name="contact" placeholder="Your phone number" required>
                                 <div class="invalid-feedback">Contact is required.</div>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="Email Address" required>
-                            <div class="invalid-feedback">Valid email is required.</div>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                            <div class="invalid-feedback">Message is required.</div>
-                        </div>
-                        <!-- Cloudflare Turnstile widget -->
-                        <div class="mb-3 w-100 turnstile-container" aria-hidden="false">
-                            <div class="cf-turnstile" data-sitekey="<?php echo htmlspecialchars($turnstile_sitekey); ?>" data-theme="light"></div>
-                        </div>
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </form>
+                            <div class="form-group mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
+                                <div class="invalid-feedback">Valid email is required.</div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+                                <div class="invalid-feedback">Message is required.</div>
+                            </div>
+                            <!-- Cloudflare Turnstile widget -->
+                            <div class="mb-3 w-100 turnstile-container" aria-hidden="false">
+                                <div class="cf-turnstile" data-sitekey="<?php echo htmlspecialchars($turnstile_sitekey); ?>" data-theme="light"></div>
+                            </div>
+                            <button type="submit" class="submit-btn w-100">Send Message</button>
+                        </form>
+                    </div>
                 </div>
                 
-                <div class="col-lg-5">
-                    <div class="contact-info d-flex flex-column justify-content-center h-100" style="min-height: 400px;">
-                        <h3>Address</h3>
-                        <p>
-                            <a href="https://maps.app.goo.gl/JpSWRWs45M6FuBQe8" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               style="text-decoration: none; color: inherit;">
-                               281 V. Luna St., Padre Garcia, 4224 Batangas
-                            </a>
-                             <a href="https://maps.app.goo.gl/mDY9KqeRBaXTm2JR6" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               style="text-decoration: none; color: inherit;">
-                             <p>V6F8+P38, Padre Garcia, Batangas</p>
-                             </a>
-                              <a href="https://maps.app.goo.gl/gKD6GszPE12M2GRn9" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               style="text-decoration: none; color: inherit;">
-                                <p> V6MF+8JH, Banaba, Padre Garcia, Batangas</p>
-                            </a>
-                        </p>
-                        
-                        <h3>Contact</h3>
-                        <p>Phone: +0923-456-789</p>
-                        <p>Email: resteasempdo@gmail.com</p>
-                        
-                        <h3>Open Time</h3>
-                        <p>Monday - Sunday : 8:00am - 5:00pm</p>
+                <div class="col-lg-6">
+                    <div class="contact-info-wrapper">
+                        <div class="contact-info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Our Locations</h4>
+                            <div class="info-list">
+                                <a href="https://maps.app.goo.gl/JpSWRWs45M6FuBQe8" target="_blank" rel="noopener noreferrer" class="info-link">
+                                    <i class="fas fa-location-dot"></i> 281 V. Luna St., Padre Garcia, 4224 Batangas
+                                </a>
+                                <a href="https://maps.app.goo.gl/mDY9KqeRBaXTm2JR6" target="_blank" rel="noopener noreferrer" class="info-link">
+                                    <i class="fas fa-location-dot"></i> V6F8+P38, Padre Garcia, Batangas
+                                </a>
+                                <a href="https://maps.app.goo.gl/gKD6GszPE12M2GRn9" target="_blank" rel="noopener noreferrer" class="info-link">
+                                    <i class="fas fa-location-dot"></i> V6MF+8JH, Banaba, Padre Garcia, Batangas
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>Contact Info</h4>
+                            <div class="info-list">
+                                <p class="info-item"><strong>Phone:</strong> +0923-456-789</p>
+                                <p class="info-item"><strong>Email:</strong> resteasempdo@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Office Hours</h4>
+                            <div class="info-list">
+                                <p class="info-item">Monday - Sunday</p>
+                                <p class="info-item"><strong>8:00 AM - 5:00 PM</strong></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
