@@ -111,118 +111,180 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">
+                <img src="assets/RE Logo New.png" alt="Logo">
+                <span class="brand-name">RestEase</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.php">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-signin" href="login.php">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <section class="hero scroll-animate fade-up">
-        <div class="section-bg-objects">
-            <div class="section-bg-object circle automove1" style="width:140px;height:140px;top:10%;left:8%;"></div>
-            <div class="section-bg-object square automove2" style="width:110px;height:110px;top:60%;left:70%;"></div>
-            <div class="section-bg-object triangle automove3" style="top:40%;left:30%;width:0;height:0;"></div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">
-                    <img src="assets/RE Logo New.png" alt="Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
-                        <li class="nav-item"><a class="btn" href="login.php">Sign In</a></li>
-                    </ul>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="trust-badge mb-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="partner-avatars d-flex">
+                                    <img src="assets/Logo garcia.png" alt="Partner" class="avatar-img">
+                                    <img src="assets/BSU Logo.png" alt="Partner" class="avatar-img">
+                                    <img src="assets/Seal_of_Batangas.png" alt="Partner" class="avatar-img">
+                                </div>
+                                <span class="trust-text">Trusted by Padre Garcia, Batangas</span>
+                            </div>
+                        </div>
+                        <h1 class="hero-title fade-in-up delay-1">Manage Cemetery Records with <span class="highlight">Perfect Digital Organization.</span></h1>
+                        <p class="hero-description fade-in-up delay-2">Empowering Padre Garcia, Batangas with digital cemetery management solutions. Simplify tracking niches, renewals, and documents.</p>
+                        <div class="hero-buttons fade-in-up delay-3">
+                            <a href="login.php" class="btn btn-primary-hero">Request Now</a>
+                            <a href="#explore-restease" class="btn btn-secondary-hero">Watch Demo</a>
+                        </div>
+                        <p class="hero-note fade-in-up delay-4">No paperwork. No hassle. No delays. No stress.</p>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <div class="hero-content">
-            <h1 class="fade-in-up delay-1">RestEase: Web-Based Cemetery Records & <br> Certificate Management of Padre Garcia Batangas</h1>
-            <p class="fade-in-up delay-2">Designed for managing cemetery apartment records and certificates in Padre Garcia, Batangas. It simplifies tracking niche, renewals, and documents.</p>
-            <div class="btn-container mb-5 fade-in-up delay-3">
-                <a href="login.php" class="btn btn-primary btn-custom">Request Now</a>
-                <a href="#explore-restease" class="btn btn-dark btn-custom">Explore</a>
-            </div>
-        </div>
-        <div class="associated-by mt-4">
-            <p class="text-center"><b>Associated By:</b></p>
-            <div class="footer-icons d-flex justify-content-center align-items-center flex-wrap gap-4">
-                <img src="assets/Logo garcia.png" alt="Logo 1" style="height: 52px; width: auto;">
-                <img src="assets/re logo blue.png" alt="Logo 3" style="height: 60px; width: auto;">
-                   <img src="assets/BSU Logo.png" alt="Logo 3" style="height: 53px; width: auto;">
-                      <img src="assets/Seal_of_Batangas.png" alt="Logo 3" style="height: 53px; width: auto;">
+                <div class="col-lg-6">
+                    <div class="hero-image-container fade-in-up delay-2">
+                        <img src="assets/garcia.webp" alt="RestEase Cemetery Management" class="hero-main-image">
+                        <div class="floating-badge badge-1">
+                            <i class="fas fa-check-circle"></i> <span>Organized Records</span>
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <i class="fas fa-map-marked-alt"></i> <span>Interactive Maps</span>
+                        </div>
+                        <div class="floating-badge badge-3">
+                            <i class="fas fa-bell"></i> <span>Renewal Reminders</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="who-we-are scroll-animate fade-up">
-        <div class="section-bg-objects">
-            <div class="section-bg-object circle automove2" style="width:110px;height:110px;top:20%;left:80%;"></div>
-            <div class="section-bg-object square automove3" style="width:80px;height:80px;top:70%;left:15%;"></div>
-            <div class="section-bg-object triangle automove1" style="top:55%;left:60%;width:0;height:0;"></div>
-        </div>
+    <section class="partners-section py-4">
         <div class="container">
-            <div class="row align-items-center scroll-animate-stagger fade-up">
-                <!-- Text Content -->
-                <div class="col-md-6">
-                    <h2 class="section-title">Who we are</h2>
-                    <p class="section-description" style="text-align: justify;">
-                        RestEase is a web-based Cemetery Records and Certificate Management System designed for the Municipal Planning and Development Office (MPDO) of Padre Garcia, Batangas. The system was created to modernize cemetery operations by shifting from manual, paper-based processes to a digital platform that ensures organized record management, efficient niche tracking, and renewal reminders.
-                    </p>
-                    <a href="about-us.php" class="btn btn-primary btn-read-more">Read More</a>
-                </div>
-                <!-- Image -->
-                <div class="col-md-6 text-center">
-                    <img src="assets/testimony-image.webp" alt="Who we are" class="img-fluid rounded">
+            <div class="partners-wrapper">
+                <p class="partners-label">Trusted Partners:</p>
+                <div class="partners-logos-inline">
+                    <img src="assets/Logo garcia.png" alt="Padre Garcia" class="partner-logo-inline">
+                    <img src="assets/re logo blue.png" alt="RestEase" class="partner-logo-inline">
+                    <img src="assets/BSU Logo.png" alt="BSU" class="partner-logo-inline">
+                    <img src="assets/Seal_of_Batangas.png" alt="Batangas" class="partner-logo-inline">
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <span class="about-badge">About RestEase</span>
+                        <h2 class="about-title">Transforming Cemetery Management for <span class="highlight">Padre Garcia</span></h2>
+                        <p class="about-description">
+                            At RestEase, we transform traditional cemetery management into a seamless digital experience. Our platform serves the Municipal Planning and Development Office (MPDO) of Padre Garcia, Batangas.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Digital Records</h4>
+                                    <p>Easy access and long-term preservation of all cemetery records</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Interactive Maps</h4>
+                                    <p>Precise niche tracking with GIS technology</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Smart Reminders</h4>
+                                    <p>Timely renewal notifications for families</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="about-us.php" class="btn btn-primary-hero mt-3">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image-container">
+                        <img src="assets/testimony-image.webp" alt="Who we are" class="about-main-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Our Services Section (Connected to Who We Are) -->
-            <div class="text-center mt-5 pt-5 scroll-animate fade-down">
+    <!-- Our Services Section -->
+    <section class="our-services py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
                 <h2 class="section-title">Our Services</h2>
                 <p class="section-description">
                     RestEase offers a modern, efficient, and transparent approach to cemetery management through digital innovation.
                 </p>
-                <div class="row mt-4 d-flex align-items-stretch scroll-animate-stagger scale-in">
-                    <!-- Card 1 -->
-                    <div class="col-md-4 d-flex">
-                        <div class="service-card flex-grow-1 text-center">
-                            <div class="d-flex align-items-center justify-content-center">
-                                <h3 class="service-title flex-grow-1">Record Keeping</h3>
-                                <div class="icon">
-                                    <img src="assets/recordsicon.png" alt="Record Keeping" class="img-fluid">
-                                </div>
+            </div>
+            <div class="row mt-4 d-flex align-items-stretch scroll-animate-stagger scale-in">
+                <!-- Card 1 -->
+                <div class="col-md-4 d-flex">
+                    <div class="service-card flex-grow-1 text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <h3 class="service-title flex-grow-1">Record Keeping</h3>
+                            <div class="icon">
+                                <img src="assets/recordsicon.png" alt="Record Keeping" class="img-fluid">
                             </div>
-                            <p class="service-description" style="text-align: center;">
-                                We provide a secure and organized digital database that allows administrators to easily store, access, and manage burial and certificate records, ensuring data accuracy and long-term preservation.
-                            </p>
                         </div>
+                        <p class="service-description" style="text-align: center;">
+                            We provide a secure and organized digital database that allows administrators to easily store, access, and manage burial and certificate records, ensuring data accuracy and long-term preservation.
+                        </p>
                     </div>
-                    <!-- Card 2 -->
-                    <div class="col-md-4 d-flex">
-                        <div class="service-card flex-grow-1 text-center">
-                            <div class="d-flex align-items-center justify-content-center">
-                                <h3 class="service-title flex-grow-1">Cemetery Mapping</h3>
-                                <div class="icon">
-                                    <img src="assets/mappicon.png" alt="Cemetery Mapping" class="img-fluid">
-                                </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4 d-flex">
+                    <div class="service-card flex-grow-1 text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <h3 class="service-title flex-grow-1">Cemetery Mapping</h3>
+                            <div class="icon">
+                                <img src="assets/mappicon.png" alt="Cemetery Mapping" class="img-fluid">
                             </div>
-                            <p class="service-description" style="text-align: center;">
-                                Using GIS technology, we offer an interactive digital map that helps users and administrators locate niches, track availability, and visualize the layout of the cemetery in real time.
-                            </p>
                         </div>
+                        <p class="service-description" style="text-align: center;">
+                            Using GIS technology, we offer an interactive digital map that helps users and administrators locate niches, track availability, and visualize the layout of the cemetery in real time.
+                        </p>
                     </div>
-                    <!-- Card 3 -->
-                    <div class="col-md-4 d-flex">
-                        <div class="service-card flex-grow-1 text-center">
-                            <div class="d-flex align-items-center justify-content-center">
-                                <h3 class="service-title flex-grow-1">Notifications and Reminders</h3>
-                                <div class="icon">
-                                    <img src="assets/notificon.png" alt="Notifications and Reminders" class="img-fluid">
-                                </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4 d-flex">
+                    <div class="service-card flex-grow-1 text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <h3 class="service-title flex-grow-1">Notifications and Reminders</h3>
+                            <div class="icon">
+                                <img src="assets/notificon.png" alt="Notifications and Reminders" class="img-fluid">
                             </div>
-                            <p class="service-description" style="text-align: center;">
-                                Our notification system keeps families informed by sending timely alerts for certificate renewals, updates, and important announcements—ensuring no deadlines are missed.
-                            </p>
                         </div>
+                        <p class="service-description" style="text-align: center;">
+                            Our notification system keeps families informed by sending timely alerts for certificate renewals, updates, and important announcements—ensuring no deadlines are missed.
+                        </p>
                     </div>
                 </div>
             </div>
