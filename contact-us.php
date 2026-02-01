@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./assets/re logo blue.png">
+    <link rel="icon" type="image/png" href="./assets/restease-logo.png">
     <title>Contact Us - RestEase</title>
     <!-- Add Google Fonts for Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -97,31 +97,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
             <a class="navbar-brand" href="index.php">
-                    <img src="assets/RE Logo New.png" alt="Logo">
-                </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <img src="assets/RE Logo New.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact-us.php">Contact Us</a></li>
-                    <li class="nav-item"><a class="btn" href="login.php">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.php">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact-us.php">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-signin" href="login.php">Sign In</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Contact Hero Section -->
-    <section class="contact-hero" style="padding-top: 110px;">
+    <section class="contact-hero">
         <div class="container">
-            <h1 class="fade-in-up delay-1">Contact Us</h1>
-            <p class="fade-in-up delay-2">Have questions or need assistance? We're here to help! Reach out to us for any inquiries about our system, services, or support.</p>
+            <span class="contact-badge fade-in-up delay-1">Contact RestEase</span>
+            <h1 class="fade-in-up delay-2">Let’s Connect and <span class="highlight-text">Assist You</span></h1>
+            <p class="fade-in-up delay-3">Have questions or need assistance? We’re here to help. Reach out for inquiries about our system, services, or support.</p>
+            <div class="contact-chips fade-in-up delay-4">
+                <span><i class="fas fa-phone"></i> +0923-456-789</span>
+                <span><i class="fas fa-envelope"></i> resteasempdo@gmail.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> Padre Garcia, Batangas</span>
+            </div>
         </div>
     </section>
 
@@ -130,8 +135,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
-                    <h2>Get In Touch</h2>
-                    <p class="mb-4">Connect with us for more information or assistance. Whether you have concerns, suggestions, or need help, we're just a message away!</p>
+                    <div class="contact-form-card">
+                        <h2>Get In Touch</h2>
+                        <p class="mb-4">Connect with us for more information or assistance. Whether you have concerns, suggestions, or need help, we're just a message away!</p>
                     
                     <?php if ($successMsg): ?>
                         <div class="alert alert-success"><?php echo $successMsg; ?></div>
@@ -139,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="alert alert-danger"><?php echo $errorMsg; ?></div>
                     <?php endif; ?>
 
-                    <form method="POST" id="contactForm" novalidate>
+                        <form method="POST" id="contactForm" novalidate>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="name" placeholder="Name" required>
@@ -162,12 +168,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="mb-3 w-100 turnstile-container" aria-hidden="false">
                             <div class="cf-turnstile" data-sitekey="<?php echo htmlspecialchars($turnstile_sitekey); ?>" data-theme="light"></div>
                         </div>
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </form>
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </form>
+                    </div>
                 </div>
                 
                 <div class="col-lg-5">
-                   <div class="contact-info d-flex flex-column justify-content-center h-100" style="min-height: 400px;">
+                   <div class="contact-info d-flex flex-column justify-content-center h-100">
                         <h3>Address</h3>
                         <p>
                             <a href="https://maps.app.goo.gl/JpSWRWs45M6FuBQe8" 
