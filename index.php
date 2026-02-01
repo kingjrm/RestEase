@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RestEase</title>
-    <link rel="icon" type="image/png" href="./assets/re logo blue.png">
+    <link rel="icon" type="image/png" href="./assets/restease-logo.png">
     <!-- Add Google Fonts for Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -439,17 +439,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="section-bg-object triangle automove1" style="top:70%;left:70%;width:0;height:0;"></div>
         </div>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <img src="./assets/Poster.webp" alt="Testimony Image" class="img-fluid rounded">
-                </div>
-                <div class="col-md-8">
-                    <blockquote class="blockquote">
-                        <p class="mb-4" style="font-style: italic;">
-                            "In a world where time moves fast, we ensure that remembering and honoring the past is effortless. Through innovation and organization, we provide a seamless way to preserve legacies and manage what truly matters."
-                        </p>
-                        <footer class="blockquote-footer">RestEase</footer>
-                    </blockquote>
+            <div class="testimony-content">
+                <div class="row align-items-center">
+                    <!-- Image Column -->
+                    <div class="col-lg-5 col-md-12">
+                        <div class="testimony-image-wrapper">
+                            <img src="./assets/Poster.webp" alt="RestEase Testimony" class="testimony-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Quote Column -->
+                    <div class="col-lg-7 col-md-12">
+                        <div class="testimony-quote">
+                            <i class="fas fa-quote-left testimony-icon"></i>
+                            <p class="testimony-text">"In a world where time moves fast, we ensure that remembering and honoring the past is effortless. Through innovation and organization, we provide a seamless way to preserve legacies and manage what truly matters."</p>
+                            <footer class="testimony-author">— RestEase</footer>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -553,6 +559,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             e.preventDefault();
         }
     });
+    </script>
+    <script>
+    // Suppress Cloudflare Turnstile sandbox warnings
+    (function() {
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        console.error = function(...args) {
+            if (args[0] && typeof args[0] === 'string' && args[0].includes('sandboxed')) return;
+            originalError.apply(console, args);
+        };
+        console.warn = function(...args) {
+            if (args[0] && typeof args[0] === 'string' && args[0].includes('sandboxed')) return;
+            originalWarn.apply(console, args);
+        };
+    })();
     </script>
     <style>
         /* Turnstile alignment: center and constrain so it lines up with inputs */

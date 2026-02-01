@@ -1,14 +1,21 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100%;
     /* prevent horizontal scrollbar caused by 100vw backgrounds */
     overflow-x: hidden;
 }
 .hero {
     background: #f8f9fa;
     position: relative;
-    min-height: 90vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     padding: 120px 20px 60px;
@@ -823,13 +830,13 @@ body {
 .contact-info-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 12px;
 }
 .contact-info-card {
     background: #ffffff;
     border: 1px solid #e5e5e5;
-    border-radius: 15px;
-    padding: 30px;
+    border-radius: 12px;
+    padding: 16px;
     transition: all 0.3s ease;
 }
 .contact-info-card:hover {
@@ -837,35 +844,36 @@ body {
     box-shadow: 0 8px 25px rgba(0, 119, 182, 0.1);
 }
 .info-icon {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background: #e3f2fd;
-    border-radius: 12px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: #0077b6;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 .contact-info-card h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     color: #1a1a1a;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 .info-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
 }
 .info-link {
     color: #666;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     transition: all 0.3s ease;
+    font-size: 0.85rem;
 }
 .info-link:hover {
     color: #0077b6;
@@ -877,7 +885,7 @@ body {
 .info-item {
     color: #666;
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 .info-item strong {
     color: #1a1a1a;
@@ -1214,4 +1222,148 @@ textarea.form-control {
 .testimony {
     position: relative;
     overflow: hidden;
+}
+
+/* Testimony Section Redesign */
+.testimony {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+    padding: 80px 20px 60px;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.testimony::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 119, 182, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.testimony::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 350px;
+    height: 350px;
+    background: rgba(0, 119, 182, 0.03);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.testimony-content {
+    position: relative;
+    z-index: 1;
+}
+
+.testimony-content .row {
+    display: flex;
+    align-items: center;
+    margin: 0 -15px;
+}
+
+.testimony-content .col-lg-5,
+.testimony-content .col-lg-7 {
+    padding: 0 15px;
+}
+
+.testimony-content .col-lg-5 {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.testimony-content .col-lg-7 {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.testimony-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 119, 182, 0.15);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.testimony-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.testimony-image-wrapper:hover .testimony-image {
+    transform: scale(1.05);
+}
+
+.testimony-quote {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 30px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 119, 182, 0.1);
+}
+
+.testimony-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #0077b6, #005f8e);
+    border-radius: 16px 0 0 16px;
+}
+
+.testimony-icon {
+    font-size: 2.2rem;
+    color: #0077b6;
+    opacity: 0.2;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.testimony-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.testimony-author {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0077b6;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .testimony {
+        padding: 60px 20px;
+    }
+    
+    .testimony-quote {
+        padding: 30px 25px;
+        margin-top: 30px;
+    }
+    
+    .testimony-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .testimony-icon {
+        font-size: 2rem;
+    }
 }
