@@ -29,6 +29,21 @@ $field_errors = [
     'terms' => false
 ];
 
+// Ensure pending_users table exists to avoid runtime errors
+$conn->query(
+    "CREATE TABLE IF NOT EXISTS pending_users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        first_name VARCHAR(50) NOT NULL,
+        last_name VARCHAR(50) NOT NULL,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        contact_no VARCHAR(20) NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        verification_token VARCHAR(255) DEFAULT NULL,
+        verification_code VARCHAR(12) DEFAULT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4"
+);
+
 require 'vendor/autoload.php'; // For PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -227,8 +242,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./assets/re logo blue.png">
-    <title>RestEase - Sign Up</title>
+    <link rel="icon" type="image/png" href="./assets/restease-logo.png">
+    <title>Sign Up - RestEase</title>
     <!-- Add Google Fonts for Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -412,40 +427,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                    <img src="assets/RE Logo New.png" alt="Logo">
-                </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <img src="assets/RE Logo New.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.php">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="main-content">
-        <div class="login-container">
-            <div class="row g-0">
-                <!-- Left Side - Image with Text -->
-                <div class="col-md-6 left-side">
-                    <div class="content-overlay">
-                        <h1>Welcome to<br>RestEase</h1>
-                        <p>Log in to your RestEase account to seamlessly handle cemetery records, manage certificates, and streamline renewal processes with ease.</p>
+    <section class="register-section">
+        <div class="container-fluid">
+            <div class="row align-items-center" style="min-height: calc(100vh - 70px);">
+                <!-- Left Side - Welcome Text -->
+                <div class="col-lg-6 px-4 px-lg-5 mb-5 mb-lg-0 order-2 order-lg-1">
+                    <div class="register-welcome">
+                        <div class="welcome-badge">
+                            <i class="fas fa-rocket"></i>
+                            <span>Get Started</span>
+                        </div>
+                        <h1>Create your <span class="highlight-text">RestEase</span> account</h1>
+                        <p class="lead">Set up your profile and manage cemetery records with clarity, speed, and secure access.</p>
+                        <div class="welcome-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Quick setup</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-layer-group"></i>
+                                <span>All features unlocked</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-file-signature"></i>
+                                <span>Guided requests</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure by default</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Right Side - Registration Form -->
-                <div class="col-md-6 right-side">
-                    <div class="login-form">
-                        <h2>Sign Up</h2>
+                <div class="col-lg-6 px-4 px-lg-5 order-1 order-lg-2">
+                    <div class="register-form-card">
+                        <div class="form-header">
+                            <h2>Create Account</h2>
+                            <p>Get started in just a few steps</p>
+                        </div>
                         <!-- Custom Toast Notification -->
                         <?php if ($register_success || $register_error || $verification_error || $email_sent): ?>
                         <?php
